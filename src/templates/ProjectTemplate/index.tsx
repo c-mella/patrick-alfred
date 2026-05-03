@@ -3,6 +3,7 @@ import Nav from '~/components/Nav'
 import SidebarNav from '~/components/SidebarNav'
 import ProjectInfo from '~/components/ProjectInfo'
 import PasswordGate from '~/components/PasswordGate'
+import VideoPlayer from '~/components/VideoPlayer'
 import Footer from '~/components/Footer'
 import { projects } from '~/data/projects'
 import type { Project } from '~/data/projects'
@@ -115,8 +116,18 @@ export default function ProjectTemplate({ project }: ProjectTemplateProps) {
           <div className={styles.assets}>
             <div className="container">
               <div className="row center-xs">
-                <div className="col-xs-9 col-sm-5">
+                <div className="col-xs-10">
                 {project.assets.map((asset, i) => {
+                  if (asset.videoSrc) {
+                    return (
+                      <VideoPlayer
+                        key={i}
+                        src={asset.videoSrc}
+                        poster={asset.poster}
+                        title={asset.videoTitle}
+                      />
+                    )
+                  }
                   if (asset.vimeoId) {
                     return (
                       <div key={i} className={styles.videoEmbed}>

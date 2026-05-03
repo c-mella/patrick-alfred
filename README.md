@@ -43,11 +43,81 @@ public/
 
 ## Adding a new project
 
-1. Open `src/data/projects.ts`
-2. Add a new entry to the `projects` array following the `Project` interface
-3. Drop the hero and asset images into `public/images/`
-4. Update `prev`/`next` slugs on neighbouring projects
-5. Add the project to `footerProjects` if it should appear in the site footer
+### 1. Add images
+
+Copy all images for the new project into `public/assets/images/`. At minimum you'll need:
+
+| Image | Used for |
+|-------|----------|
+| `my-project-tile.jpg` | Home page grid thumbnail |
+| `my-project-hero.jpg` | Full-width marquee banner at the top of the project page |
+| `my-project-hero-s.jpg` | Same banner, cropped for mobile (optional — falls back to desktop) |
+| Any asset images | Gallery images shown below the overview section |
+
+> **Naming:** kebab-case is conventional, e.g. `my-project-hero.jpg`.
+
+### 2. Add the project entry
+
+Open `src/data/projects.ts` and append a new object to the `projects` array. The order in the array determines the prev/next navigation — no slug wiring needed.
+
+```ts
+{
+  slug: 'my-project',          // URL: /my-project
+  title: 'My Project',
+  description: 'One-line description shown on the home grid.',
+  year: '2025',
+  tags: ['B2C', 'Web'],        // Displayed in the project-info bar
+  homeImage: '/assets/images/my-project-tile.jpg',
+  heroImage: '/assets/images/my-project-hero.jpg',
+  heroImageMobile: '/assets/images/my-project-hero-s.jpg', // optional
+  overview: 'What the project was about.',
+  outcome:  'What was achieved.',
+  team: [
+    { name: 'Patrick Alfred', role: 'Design Lead', company: 'Acme' },
+  ],
+  assets: [
+    // Regular image
+    { src: '/assets/images/my-project-screen.jpg' },
+
+    // Image that links to an external URL (e.g. a YouTube thumbnail)
+    {
+      src: '/assets/images/my-project-thumbnail.jpg',
+      href: 'https://youtube.com/watch?v=...',
+      isExternal: true,
+      isThumbnail: true,       // adds a brightness hover effect
+    },
+
+    // Embedded Vimeo video (renders as a responsive 16:9 iframe)
+    { vimeoId: '123456789', vimeoTitle: 'My Project Demo' },
+  ],
+
+  // Password-protect this page in production (optional)
+  // isLocked: true,
+},
+```
+
+**All fields except `slug`, `title`, `description`, and `homeImage` are optional.** Omitting `overview`/`outcome`/`team`/`assets` simply hides those sections.
+
+### 3. Add it to the footer (optional)
+
+Open the `footerProjects` array at the bottom of `src/data/projects.ts` and add an entry to whichever column makes sense:
+
+```ts
+{ slug: 'my-project', label: 'My Project', isLocked: false },
+```
+
+Set `isLocked: true` if the project is password-protected — this shows the padlock icon next to the footer link.
+
+### 4. Password-protect a project (optional)
+
+Set `isLocked: true` on the project entry. In **development** (`npm run dev`) the password gate is bypassed automatically. In **production** visitors must enter the password stored in `NEXT_PUBLIC_PROJECT_PASSWORD` (see `.env.local.example`).
+
+### 5. Verify
+
+```bash
+npm run dev   # check the home grid and /my-project in the browser
+npm run build # confirm a clean static build before deploying
+```
 
 ## Getting started
 

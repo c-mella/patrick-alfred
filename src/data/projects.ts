@@ -11,6 +11,9 @@ export interface Asset {
   isThumbnail?: boolean
   vimeoId?: string
   vimeoTitle?: string
+  videoSrc?: string
+  poster?: string
+  videoTitle?: string
 }
 
 export interface Project {
@@ -421,7 +424,7 @@ export const projects: Project[] = [
     slug: 'pixar',
     title: 'Pixar',
     description:
-      'Each Disney pillar brand has a home hub on Disney+. The Pixar brand page was redesigned to convert passive browsing into active playback.',
+      'Academy Award winning computer animation studio and subsidiary of Walt Disney Studios.',
     year: '2024',
     tags: ['D2C', 'Streaming'],
     homeImage: '/assets/images/pixar-tile-02.jpg',
@@ -432,15 +435,23 @@ export const projects: Project[] = [
     outcome:
       "Immediate and sustained 7+% page play conversion attributed solely to the creative refresh. Hypothesis was wildly on point as life and storytelling was brought into a studio which epitomizes it. Character forward intro video uniting multiple film titles in a single swirling motion followed by refreshed resolve creative.",
     team: [
-      { name: 'Patrick Alfred',  role: 'Design Manager',              company: 'The Walt Disney Company' },
-      { name: 'Diana Torres',    role: 'Sr. Motion Designer',         company: 'The Walt Disney Company' },
-      { name: 'Dom Gianneschi', role: 'Principal Product Designer',  company: 'Walt Disney' },
-      { name: 'Andy Dryfus',    role: 'Studio Partner',              company: 'Pixar Animation' },
+      { name: 'Patrick Alfred',  role: 'Design Manager',             company: 'The Walt Disney Company' },
+      { name: 'Diana Torres',    role: 'Sr. Motion Designer',        company: 'The Walt Disney Company' },
+      { name: 'Dom Gianneschi', role: 'Principal Product Designer', company: 'Walt Disney' },
+      { name: 'Andy Dryfus',    role: 'Studio Partner',             company: 'Pixar Animation' },
     ],
     assets: [
-      { src: '/assets/images/Pixar-Video-Thumbnail.png', isThumbnail: true },
+      {
+        videoSrc: '/assets/video/Pixar-Brand-Intro-Video.mp4',
+        poster:   '/assets/images/Pixar-Video-Thumbnail.png',
+        videoTitle: 'Pixar Brand Intro',
+      },
       { src: '/assets/images/pixar-brand-page-layout.png' },
-      { src: '/assets/images/pixar-toystory30th-thumbnail.jpg', isThumbnail: true },
+      {
+        videoSrc: '/assets/video/ToyStory-Collection.mp4',
+        poster:   '/assets/images/pixar-toystory30th-thumbnail.jpg',
+        videoTitle: 'Toy Story 30th Collection',
+      },
     ],
   },
   {
