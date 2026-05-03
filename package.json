@@ -1,0 +1,37 @@
+{
+  "name": "patrick-alfred",
+  "version": "1.0.0",
+  "description": "I made this portfolio site for my boyfriend, a designer. The code is incredibly repetitive and could use the help of some templates, but it gets the job done.",
+  "main": "script.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-mella/patrick-alfred.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c-mella/patrick-alfred/issues"
+  },
+  "homepage": "https://github.com/c-mella/patrick-alfred#readme",
+  "dependencies": {
+    "next": "^14.2.35",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^10.3.0",
+    "eslint-config-next": "^16.2.4",
+    "sass": "^1.99.0",
+    "typescript": "^6.0.3"
+  }
+}
