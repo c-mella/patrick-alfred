@@ -1,0 +1,79 @@
+.marquee {
+  padding-top: 4.5em;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.marqueeDesktop {
+  @media (max-width: 720px) {
+    display: none;
+  }
+}
+
+.marqueeMobile {
+  @media (min-width: 720px) {
+    display: none;
+  }
+}
+
+.threeUp {
+  margin: 2em 0;
+}
+
+.threeUpHeader {
+  font-size: 16px;
+  font-family: Aften-Bold, sans-serif;
+  margin-bottom: 15px;
+}
+
+.threeUpContent {
+  text-align: left;
+
+  @media only screen and (min-width: 48em) {
+    padding: 0 1em;
+  }
+}
+
+.threeUpCopy {
+  color: #858585;
+
+  p {
+    margin: 0.75em 0;
+  }
+}
+
+.assets {
+  background-color: #95a0af;
+  padding: 4em 0;
+
+  img {
+    margin: 3em 0;
+    box-shadow: 4px 7px 100px 40px rgba(51, 51, 51, 0.2);
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.assetThumbnail:hover {
+  filter: brightness(50%);
+}
+
+.videoEmbed {
+  position: relative;
+  padding-top: 56.25%; // 16:9
+  margin: 3em 0;
+  box-shadow: 4px 7px 100px 40px rgba(51, 51, 51, 0.2);
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}

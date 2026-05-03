@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import HomeTemplate from '@/templates/HomeTemplate'
+import HomeTemplate from '~/templates/HomeTemplate'
 
 export const metadata: Metadata = {
   title: 'Patrick Alfred',

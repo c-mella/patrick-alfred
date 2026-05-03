@@ -1,0 +1,19 @@
+.footer {
+  padding: 2em 0;
+
+  @media (max-width: 720px) {
+    padding: 0 0.5em 2em;
+  }
+
+  a {
+    padding: 0.6em 0;
+    display: block;
+    color: #333;
+  }
+
+  img {
+    height: 12px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+}

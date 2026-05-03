@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/c-mella/patrick-alfred#readme",
   "dependencies": {
-    "next": "^14.2.35",
+    "next": "^15.5.15",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },

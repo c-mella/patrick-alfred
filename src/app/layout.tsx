@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import '@/styles/globals.scss'
+import '~/styles/globals.scss'
 
 export const metadata: Metadata = {
   title: 'Patrick Alfred',
   description: 'Portfolio of Patrick Alfred, designer.',
-  icons: { icon: '/images/favicon.png' },
+  icons: { icon: '/assets/images/favicon.png' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

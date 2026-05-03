@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { projects, getProjectBySlug } from '@/data/projects'
-import ProjectTemplate from '@/templates/ProjectTemplate'
+import { projects, getProjectBySlug } from '~/data/projects'
+import ProjectTemplate from '~/templates/ProjectTemplate'
 
 interface Props {
   params: Promise<{ slug: string }>

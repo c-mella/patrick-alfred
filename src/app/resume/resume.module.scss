@@ -1,0 +1,67 @@
+.resume {
+  color: #858585;
+  padding: 0 0.5em;
+
+  p {
+    margin: 0;
+  }
+}
+
+.entry {
+  padding: 12px 0;
+
+  &:first-of-type {
+    padding-top: 24px;
+  }
+}
+
+.sectionLabel {
+  color: #1370fb;
+  font-weight: bold;
+  padding: 3px 0;
+  margin-bottom: 0.5em;
+}
+
+.title {
+  font-weight: bold;
+  color: #333;
+  padding: 3px 0;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  padding: 3px 0;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.info {
+  font-size: 14px;
+  padding: 3px 0;
+}
+
+.listItem {
+  padding: 6px 0;
+}
+
+.accolades {
+  .subtitle {
+    font-style: normal;
+  }
+}
+
+.education {
+  padding-bottom: 100px;
+
+  @media only screen and (min-width: 48em) {
+    padding-bottom: 0;
+  }
+}
+
+.work {
+  @media only screen and (min-width: 48em) {
+    .entry:last-of-type {
+      padding-bottom: 100px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.tracks {
+  margin-top: 1.5em;
+}
+
+.song {
+  padding: 1em 0;
+  border-bottom: 1px solid #eaeaea;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.songTitle {
+  display: inline-block;
+  width: 110px;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.audio {
+  vertical-align: middle;
+  width: 200px;
+
+  @media (max-width: 480px) {
+    width: 160px;
+  }
+}

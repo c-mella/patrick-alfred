@@ -1,0 +1,38 @@
+.nav {
+  background-color: #1370fb;
+  color: #fff;
+  padding: 0.5em;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
+
+  p {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.footer {
+  background-color: #333;
+}
+
+.shapes {
+  display: inline-block;
+  color: white;
+  width: 280px;
+  height: 20px;
+}
+
+.links {
+  text-align: right;
+
+  a {
+    padding: 0 1em;
+    color: white;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+}

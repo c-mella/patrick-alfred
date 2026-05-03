@@ -1,0 +1,99 @@
+.root {
+  background-color: #fff;
+  width: 100%;
+
+  @media only screen and (min-width: 720px) {
+    width: 20%;
+    position: fixed;
+    right: 0;
+    height: 100%;
+  }
+}
+
+.mobileOnly {
+  display: none;
+
+  @media (max-width: 720px) {
+    display: inline;
+  }
+}
+
+.header {
+  background-color: #1370fb;
+  text-align: left;
+  padding: 1.5em;
+  color: #f5f5f5;
+
+  @media (max-width: 720px) {
+    padding: 0 1.5em;
+    height: 50px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 28px;
+    font-family: Satyr, sans-serif;
+  }
+}
+
+.shapesBase {
+  width: 100%;
+  display: none;
+}
+
+.shapesDesktop {
+  @media (min-width: 720px) {
+    display: block;
+  }
+}
+
+.shapesMobile {
+  @media (max-width: 720px) {
+    display: inline;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+.arrows {
+  width: 25px;
+  float: right;
+  display: inline;
+  height: 100%;
+  cursor: pointer;
+
+  @media (min-width: 720px) {
+    display: none;
+  }
+}
+
+.arrowsHidden {
+  display: none !important;
+}
+
+.links {
+  padding: 1.5em;
+
+  @media only screen and (max-width: 720px) {
+    display: none;
+    padding: 1.5em 1.5em 2em;
+  }
+}
+
+.linksOpen {
+  @media only screen and (max-width: 720px) {
+    display: block;
+  }
+}
+
+.linksFooter {
+  display: block;
+}
+
+.link {
+  display: block;
+  padding: 0.5em 0.5em 0.5em 0;
+  border-bottom: 1px solid #1370fb;
+  color: #1370fb;
+  margin-bottom: 0.25em;
+}

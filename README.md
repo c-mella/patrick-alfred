@@ -6,35 +6,39 @@ Designer portfolio for Patrick Alfred Edelbacher. Built with Next.js (App Router
 
 ```
 src/
-├── app/                  # Next.js App Router pages
-│   ├── layout.tsx        # Root layout (fonts, global styles)
-│   ├── page.tsx          # Home — portfolio grid
-│   ├── [slug]/page.tsx   # Dynamic case-study pages
+├── app/                       # Next.js App Router pages
+│   ├── layout.tsx             # Root layout (fonts, global styles)
+│   ├── page.tsx               # Home — portfolio grid
+│   ├── [slug]/page.tsx        # Dynamic case-study pages
 │   ├── resume/page.tsx
 │   ├── contact/page.tsx
 │   └── musik/page.tsx
 │
-├── components/           # Re-usable UI components
-│   ├── Nav.tsx           # Desktop top nav bar
-│   ├── SidebarNav.tsx    # Home sidebar / mobile collapsible nav
-│   ├── ProjectInfo.tsx   # Title bar with prev/next or action icons
-│   ├── Footer.tsx        # Site-wide project-links footer grid
-│   └── MusikPlayer.tsx   # Client-side audio player (replaces jQuery)
+├── components/                # Re-usable UI components
+│   ├── Nav.tsx                # Desktop top nav bar
+│   ├── SidebarNav.tsx         # Home sidebar / mobile collapsible nav
+│   ├── ProjectInfo.tsx        # Title bar with prev/next or action icons
+│   ├── Footer.tsx             # Site-wide project-links footer grid
+│   └── MusikPlayer.tsx        # Client-side audio player
 │
-├── templates/            # Page-level layout templates
-│   ├── HomeTemplate.tsx  # Sidebar nav + masonry portfolio grid
-│   ├── ProjectTemplate.tsx   # Nav + marquee + three-up + assets + footer
+├── templates/                 # Page-level layout templates
+│   ├── HomeTemplate.tsx       # Sidebar nav + masonry portfolio grid
+│   ├── ProjectTemplate.tsx    # Nav + marquee + three-up + assets + footer
 │   └── SimplePageTemplate.tsx # Nav + project-info bar + slot + footer
 │
 ├── data/
-│   └── projects.ts       # All portfolio content — single source of truth
+│   └── projects.ts            # All portfolio content — single source of truth
 │
 └── styles/
-    ├── globals.scss      # Global styles (BEM blocks from original site)
-    └── _flexgrid.scss    # Flex grid utility (original _flexgrid.scss)
+    ├── globals.scss           # Global styles (BEM blocks)
+    └── _flexgrid.scss         # Flex grid utility
 
 public/
-└── images/               # SVG icons and all raster assets
+└── assets/
+    ├── images/                # All raster images, SVG icons, favicon
+    ├── fonts/                 # WOFF2 + WOFF (Aften, Aften-Bold) + OTF (Satyr)
+    ├── audio/                 # MP3 tracks for Musik page
+    └── docs/                  # PDF resume
 ```
 
 ## Adding a new project
@@ -60,11 +64,17 @@ Push to GitHub and import the repo at [vercel.com/new](https://vercel.com/new). 
 
 ## Assets not in this repo
 
-The following files are referenced but not committed (add them to `public/`):
+The following files are referenced but may not be committed. Add them to the paths below:
 
-- `images/*.jpg` / `images/*.png` — project photography
-- `images/favicon.png`
-- `Aften.ttf`, `Aften-Screen-Bold.ttf`, `Satyr10.otf` — custom fonts
-- `portrait.jpg` — contact page photo
-- `patrick-alfred-resume.pdf` — resume download
-- `*.mp3` — Musik page audio tracks
+| File(s) | Destination |
+|---------|-------------|
+| `*.jpg` / `*.png` project photography | `public/assets/images/` |
+| `favicon.png` | `public/assets/images/` |
+| `portrait.jpg` | `public/assets/images/` |
+| `AftenScreen.woff`, `AftenScreen.woff2` | `public/assets/fonts/` |
+| `AftenScreen-Bold.woff`, `AftenScreen-Bold.woff2` | `public/assets/fonts/` |
+| `Satyr10.otf` | `public/assets/fonts/` |
+| `home.mp3`, `drink.mp3`, `aclu.mp3`, `free.mp3`, `california.mp3` | `public/assets/audio/` |
+| `patrick-alfred-resume.pdf` | `public/assets/docs/` |
+
+> **Fonts:** Aften and Aften-Bold load via WOFF2 → WOFF (optimal compatibility). Satyr uses OTF as a fallback until a WOFF version is available.
